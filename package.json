@@ -13,18 +13,19 @@
   "dependencies": {
     "strapi": "3.6.10",
     "strapi-admin": "3.6.10",
-    "strapi-utils": "3.6.10",
-    "strapi-plugin-content-type-builder": "3.6.10",
-    "strapi-plugin-content-manager": "3.6.10",
-    "strapi-plugin-users-permissions": "3.6.10",
-    "strapi-plugin-email": "3.6.10",
-    "strapi-plugin-upload": "3.6.10",
-    "strapi-plugin-i18n": "3.6.10",
     "strapi-connector-mongoose": "3.6.10",
-    "strapi-plugin-graphql": "3.6.10"
+    "strapi-plugin-content-manager": "3.6.10",
+    "strapi-plugin-content-type-builder": "3.6.10",
+    "strapi-plugin-documentation": "3.6.10",
+    "strapi-plugin-email": "3.6.10",
+    "strapi-plugin-graphql": "3.6.10",
+    "strapi-plugin-i18n": "3.6.10",
+    "strapi-plugin-upload": "3.6.10",
+    "strapi-plugin-users-permissions": "3.6.10",
+    "strapi-utils": "3.6.10"
   },
   "author": {
-    "name": "A Strapi developer"
+    "name": "Singgih Wibowo"
   },
   "strapi": {
     "uuid": "d680c0a5-b3ce-4ead-8370-f0451a871d10",
