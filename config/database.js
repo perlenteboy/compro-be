@@ -1,19 +1,29 @@
 module.exports = ({ env }) => ({
-  defaultConnection: 'default',
+  defaultConnection: "default",
   connections: {
     default: {
-      connector: 'mongoose',
+      connector: "mongoose",
+
+      // local mongodb
+      // settings: {
+      //   host: env('DATABASE_HOST', '127.0.0.1'),
+      //   srv: env.bool('DATABASE_SRV', false),
+      //   port: env.int('DATABASE_PORT', 27017),
+      //   database: env('DATABASE_NAME', 'backhead'),
+      //   username: env('DATABASE_USERNAME', null),
+      //   password: env('DATABASE_PASSWORD', null),
+      // },
+
+      //mongodb atlas
       settings: {
-        host: env('DATABASE_HOST', '127.0.0.1'),
-        srv: env.bool('DATABASE_SRV', false),
-        port: env.int('DATABASE_PORT', 27017),
-        database: env('DATABASE_NAME', 'backhead'),
-        username: env('DATABASE_USERNAME', null),
-        password: env('DATABASE_PASSWORD', null),
+        uri: env(
+          "DATABASE_URI",
+          "mongodb+srv://singgih:2n70Qzm5QRIi55NR@cluster0.0f07xke.mongodb.net/?retryWrites=true&w=majority"
+        ),
       },
       options: {
-        authenticationDatabase: env('AUTHENTICATION_DATABASE', null),
-        ssl: env.bool('DATABASE_SSL', false),
+        authenticationDatabase: env("AUTHENTICATION_DATABASE", null),
+        ssl: env.bool("DATABASE_SSL", false),
       },
     },
   },
