@@ -1,19 +1,77 @@
+const sqlite = {
+  connector: "bookshelf",
+  settings: {
+    client: "sqlite",
+    filename: ".tmp/data.db",
+  },
+  options: {
+    // debug: true,
+    useNullAsDefault: true,
+  },
+};
+
+const postgres = {
+  connector: "bookshelf",
+  settings: {
+    client: "postgres",
+    database: "strapi",
+    username: "strapi",
+    password: "strapi",
+    port: 5432,
+    host: "localhost",
+  },
+  options: {},
+};
+
+const mysql = {
+  connector: "bookshelf",
+  settings: {
+    client: "mysql",
+    database: "strapi",
+    username: "strapi",
+    password: "strapi",
+    port: 3306,
+    host: "localhost",
+  },
+  options: {},
+};
+
+const mongo = {
+  connector: "mongoose",
+  settings: {
+    database: "casio",
+    username: "",
+    password: "",
+    port: 27017,
+    host: "localhost",
+  },
+  options: {
+    authenticationDatabase: null,
+    ssl: false,
+  },
+};
+
+const db = {
+  mysql,
+  sqlite,
+  postgres,
+  mongo,
+};
+
+// module.exports = {
+//   defaultConnection: "default",
+
+//   connections: {
+//     /** local */
+//     default: db.mongo,
+//   },
+// };
+
 module.exports = ({ env }) => ({
   defaultConnection: "default",
   connections: {
     default: {
       connector: "mongoose",
-
-      // local mongodb
-      // settings: {
-      //   host: env('DATABASE_HOST', '127.0.0.1'),
-      //   srv: env.bool('DATABASE_SRV', false),
-      //   port: env.int('DATABASE_PORT', 27017),
-      //   database: env('DATABASE_NAME', 'backhead'),
-      //   username: env('DATABASE_USERNAME', null),
-      //   password: env('DATABASE_PASSWORD', null),
-      // },
-
       //mongodb atlas
       settings: {
         uri: env(
